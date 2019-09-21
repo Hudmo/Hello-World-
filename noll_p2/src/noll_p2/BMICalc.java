@@ -17,7 +17,7 @@ public class BMICalc {
 			double weightInLbs = scnr.nextDouble();
 			double heightInInches = scnr.nextDouble();
 			//Scanner scnr = new Scanner(System.in);
-			BMI = (703 * weightInLbs) / (Math.pow(heightInInches, 2));
+			BMI = ((703 * weightInLbs) / (Math.pow(heightInInches, 2)));
 		}
 			
 		if (userNum == 2) {
@@ -26,7 +26,7 @@ public class BMICalc {
 			double heightInMeters = scnr.nextDouble();
 			//Scanner scnr = new Scanner(System.in);
 			//$$BMI\:=\:frac{weightInKilos}{heightInMeters^2}$$;
-			BMI = weightInKilos / (Math.pow(heightInMeters, 2)); 
+			BMI = (weightInKilos / (Math.pow(heightInMeters, 2))); 
 		}
 		
 		System.out.print("Your Body Mass Index is: ");
@@ -37,8 +37,27 @@ public class BMICalc {
 		System.out.println("Underweight < 18.5");
 		System.out.println("18.5 <= Normal Weight <= 24.9");
 		System.out.println("25 <= Overweight <= 29.9");
-		System.out.println("Obeisity >= 30");
+		System.out.println("Obesity >= 30");
 		System.out.println("Source: https://nhlbi.nih.gov/health/educational/lose_wt/BMI/"
 			+ "bmicalc.htm");
+		System.out.print("\n");
+		if (BMI < 0) {
+			System.out.println("Mistakes were made.");
+		}
+		else if (BMI < 18.5) {
+			System.out.println("You are underweight");
+		}
+		else if (BMI < 25) {
+			System.out.println("You are a normal weight");
+		}
+		else if (BMI < 30) {
+			System.out.println("You are overweight");
+		}
+		else if (BMI >= 30) {
+			System.out.println("You are obese");
+		}
+		else if (BMI > 100) {
+			System.out.print("Your house does not have a body mass index measurement.");
+		}
 	}
 }
